@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Karla", sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(45deg, #040404, #151515, #252525, #353535);
+    color: #fff;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/portfolio_profile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.container {
+    padding: 1rem 7%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+img {
+    height: 5rem;
+    width: auto;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: .7rem 1.5rem;
+}
+
+nav ul li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    background: #f18;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right ;
+    transition: transform .5s;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.header-text {
+    margin-top: 12%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f18;
+}
+
+.header-text p {
+    font-size: 3rem;
+    text-decoration: underline;
+    text-decoration-color: #8f0;
+}
+
+.header-text h1 {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #8f0;
+}
+
+.header-text span {
+    color: #0aa;
+}
+
+.header-text h4 {
+    color: #f40;
+}
+
+.CV {
+    width: 20rem;
+    display: flex;
+    margin: 4rem 0;
+    flex-basis: 35%;
+}
+
+.btn.btn-2 {
+    display: inline-block;
+    color: #000;
+    background: linear-gradient(45deg, #f18, #f40);
+    box-shadow: none;
+}
+
+.btn.btn-2:hover {
+    background: linear-gradient(45deg, #8f0, #5f8, #0aa);
+}
+
+
+/* --------------- ABOUT SECTION --------------- */
+
+
+#about {
+    padding: 5rem 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.abt-col-1 {
+    flex-basis: 35%;
+}
+
+.lptp-img {
+    height: auto;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.abt-col-2 {
+    flex-basis: 50%;
+    margin-top: 2rem;
+}
+
+.abt-col-2 h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.abt-col-2 p {
+    font-size: 1.3rem;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 2rem 0 2.5rem;
+}
+
+.tab-links {
+    margin-right: 4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+/* .tab-links::after {
+    content: "";
+    width: 100%;
+    height: .1rem;
+    background: #f18;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transform-origin: bottom right ;
+    transition: transform .5s;
+}
+
+.tab-links:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+} */
+
+
+.tab-links::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #f18;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.tab-contents ul li span {
+    color: #f18;
+    font-size: 1.5rem;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+
+/* ----------------- PROJECTS SECTION ----------------- */
+
+
+#portfolio {
+    padding: 3rem 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.work {
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #f18);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 2.5rem;
+    text-align: center;
+    font-size: 1rem;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 1.3rem;
+}
+
+.layer a {
+    margin-top: 1.3rem;
+    color: #f18;
+    text-decoration: none;
+    font-size: 1.1rem;
+    line-height: 3.5rem;
+    background: #fff;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+.btn {
+    display: block;
+    margin: 3rem auto;
+    width: fit-content;
+    border: 1px solid #f18;
+    padding: 1rem 3rem;
+    border-radius: 7px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #f18;
+    box-shadow: 5px 5px 12px #f18;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #8f0, #5f8, #0aa);
+}
+
+
+/* --------------- SERVICES SECTION --------------- */
+
+
+#services {
+    padding: 2rem 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.services-list div {
+    background: #252525;
+    padding: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    border-radius: 15px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div i {
+    color: #0aa;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.services-list div h2 {
+    color: #8f0;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #f18;
+    transform: perspective(200px) translateZ(10px);
+}
+
+
+/* ----------------- CONTACT SECTION ----------------- */
+
+
+#contact {
+    padding: 3rem 0;
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 2rem;
+}
+
+.contact-left p i {
+    color: #f18;
+    margin-right: 1rem;
+    font-size: 1.75rem;
+}
+
+.social-icons {
+    margin-top: 3rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 3rem;
+    margin-right: 1rem;
+    color: #0aa;
+    display: inline-block;
+    transition: background 0.5s, transform 0.2s;
+}
+
+.social-icons a:hover {
+    color: #f18;
+    transform: perspective(200px) translateZ(20px);
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #252525;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 7px;
+}
+
+form btn-2 {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 1.75rem 0;
+    background: #252525;
+    font-weight: 400;
+    margin-top: 1.25rem;
+    position: absolute;
+}
+
+.copyright p {
+    bottom: 0%;
+}
+
+.shortcut {
+    position: fixed;
+    bottom: 5rem;
+    right: 3rem;
+    z-index: 3;
+}
+
+.shortcut i {
+    font-size: 3rem;
+}
+
+#msg {
+    color: #8f0;
+    margin-top: -2rem;
+    display: block;
+}
+
+
+
+/* ----------------- MEDIA QUERY PROPERTIES ----------------- */
+
+
+nav .fa-solid {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #header {
+        background: url(/img/media\ portfolio\ profile.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+    }
+
+    .header-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-text p , h4 {
+        font-size: 1.5rem;
+    }
+
+    nav img {
+        height: 3rem;
+        width: auto;
+    }
+
+    nav .fa-solid {
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        background: #f18;
+        position: fixed;
+        top: 0;
+        right: -12rem;
+        width: 12rem;
+        height: 55vh;
+        padding-top: 3rem;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 1.5rem;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        cursor: pointer;
+    }
+
+    .CV {
+        position: relative;
+        top: 1.5rem;
+        right: 6rem;
+    }
+
+    .CV .btn.btn-2 {
+        padding: .5rem;
+    }
+
+
+    /* --------------- ABOUT SECTION --------------- */
+
+    
+    #about {
+        padding: 0;
+    }
+
+    .sub-title {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .abt-col-1, .abt-col-2 {
+        flex-basis: 100%;
+    }
+
+    .abt-col-1 {
+        margin-bottom: .5rem;
+    }
+
+    .abt-col-2 {
+        font-size: .7rem;
+        overflow-x: hidden;
+    }
+
+    .abt-col-2 p {
+        font-size: 1rem;
+    }
+
+    .tab-titles {
+        overflow: hidden;
+    }
+
+    .tab-links {
+        font-size: 1.25rem;
+        color: #0aa;
+        margin-right: 1rem;
+    }    
+
+    .tab-contents li {
+        font-size: 1rem;
+    }
+
+
+    /* ----------------- PROJECTS SECTION ----------------- */
+
+
+    #portfolio {
+        padding-bottom: 0;
+    }
+
+
+    /* ----------------- CONTACT SECTION ----------------- */
+
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    .social-icons {
+        margin-bottom: 3rem;
+    }
+
+    form .btn.btn-2 {
+        padding: .5rem;
+        margin-top: .5rem;
+    }
+
+    .copyright {
+        font-size: .5rem;
+        padding: 1rem 0;
+    }
+}
