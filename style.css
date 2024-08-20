@@ -19,7 +19,7 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(/img/portfolio_profile.png);
+    background-image: url(/img/pfprofile.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
@@ -479,10 +479,11 @@ nav .fa-solid {
 
 @media only screen and (max-width: 600px) {
     #header {
-        background: url(/img/media\ portfolio\ profile.png);
+        background: url(img/pfprofile.png);
         background-repeat: no-repeat;
-        background-position: right;
-        background-size: contain;
+        background-position: bottom;
+        background-size: 20rem;
+        background-position-x: right;
     }
 
     .header-text h1 {
@@ -529,12 +530,16 @@ nav .fa-solid {
 
     .CV {
         position: relative;
-        top: 1.5rem;
-        right: 6rem;
-    }
-
+        top: -3rem;
+        right: 7rem;
+        }
+        
     .CV .btn.btn-2 {
         padding: .5rem;
+        height: 2rem;
+        width: 7rem;
+        text-align: center;
+        font-size: .8rem;
     }
 
 
@@ -589,6 +594,14 @@ nav .fa-solid {
         padding-bottom: 0;
     }
 
+    #portfolio .btn {
+        height: 2rem;
+        width: 6rem;
+        font-size: 1rem;
+        padding: .4rem;
+        text-align: center;
+    }
+
 
     /* ----------------- CONTACT SECTION ----------------- */
 
@@ -599,6 +612,10 @@ nav .fa-solid {
 
     .social-icons {
         margin-bottom: 3rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
     }
 
     form .btn.btn-2 {
